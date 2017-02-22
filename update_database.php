@@ -25,7 +25,7 @@ $bookID = filter_input(INPUT_POST, "IDTextField");
 /* FIX THIS MYSQL QUERY */
 /*//////////////////////*/
 
-$query = "UPDATE books SET Title = :book_title, Author = :book_author, Price = :book_price, Genre = :book_genre WHERE Id = :book_id";
+$query = "UPDATE books SET Title = :book_title, Author = :book_author, Price = :book_price, Genre = :book_genre WHERE Id = :book_id ";
 $statement = $db->prepare($query); // encapsulate the sql statement
 $statement->bindValue(':book_id', $bookID);
 
