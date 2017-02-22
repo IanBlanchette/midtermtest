@@ -5,8 +5,18 @@ include_once('database.php'); // include the database connection file
 /* YOUR CODE GOES HERE */
 /*/////////////////////*/
 
-$book = ""; // this is just a placeholder
-
+$book = $_GET['Id'];; // this is just a placeholder
+if($book == 0) {
+    $getId = null;
+    $isAddition = 1;
+} else {
+    $isAddition = 0;
+$query = "SELECT * FROM books WHERE id = :id "; #SQL statement
+$statement = $db->prepare($query); #prepare the sql statement
+$statement->bindValue(':id', $book);
+$statement->execute(); #run on the database server
+$getId = $statement->fetch(); #returns the query
+$statement->closeCursor(); #close the connection
 ?>
 <!DOCTYPE html>
 <html lang="en">
