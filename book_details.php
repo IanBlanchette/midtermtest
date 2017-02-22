@@ -1,21 +1,29 @@
 <?php
 include_once('database.php'); // include the database connection file
-
+/*
+File Name: book_details.php
+Author: Ian Blanchette
+Student ID: 100139251
+Website Name: http://comp1006-100139251midterm.azurewebsites.net/index.php
+Description: Webpage that shows the details page. If a new book is to be entered then the field is blank. 
+If a user has clicked on the "edit" button to a book already in the database, the book can be edited
+*/
 /*//////////////////////*/
 /* YOUR CODE GOES HERE */
 /*/////////////////////*/
-$bookID = $_GET['bookID']; // assigns the gameID from the URL
+
+$bookID = $_GET['bookID']; #assigns the book id to the variable from the table 
 if($bookID == 0) {
     $book = null;
     $isAddition = 1;
 } else {
     $isAddition = 0;
-$query = "SELECT * FROM books WHERE Id = :book_id "; // SQL statement
-$statement = $db->prepare($query); // encapsulate the sql statement
+$query = "SELECT * FROM books WHERE Id = :book_id "; #Sql statement to select the current book if there is one
+$statement = $db->prepare($query); #gets the sql statement
 $statement->bindValue(':book_id', $bookID);
-$statement->execute(); // run on the db server
-$book = $statement->fetch(); // returns only one record
-$statement->closeCursor(); // close the connection
+$statement->execute(); #run it on the server
+$book = $statement->fetch(); #returns the record if there is one
+$statement->closeCursor(); #close the connection
 }
 ?>
 <!DOCTYPE html>

@@ -5,7 +5,6 @@ Author: Ian Blanchette
 Student ID: 100139251
 Website Name: http://comp1006-100139251midterm.azurewebsites.net/index.php
 Description: Php script to update the sever with the new inputs 
-
 */
 include_once('database.php');
 
@@ -21,7 +20,7 @@ if($isAddition == "1") {
 /*//////////////////////*/
 /* FIX THIS MYSQL QUERY */
 /*//////////////////////*/
-
+# The insert into statement to add a book into the actual table 
 $query = "INSERT INTO books(Title, Author, Price, Genre) VALUES (:book_title, :book_author, :book_price, :book_genre);";
 $statement = $db->prepare($query); // encapsulate the sql statement
 }
@@ -32,7 +31,7 @@ $bookID = filter_input(INPUT_POST, "IDTextField");
 /*//////////////////////*/
 /* FIX THIS MYSQL QUERY */
 /*//////////////////////*/
-
+#The sql statement to update the table with the selected information that was recieved by the php script
 $query = "UPDATE books SET Title = :book_title, Author = :book_author, Price = :book_price, Genre = :book_genre WHERE Id = :book_id ";
 $statement = $db->prepare($query); // encapsulate the sql statement
 $statement->bindValue(':book_id', $bookID);

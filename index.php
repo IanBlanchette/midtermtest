@@ -1,6 +1,13 @@
 <?php
 include_once('database.php');
-
+/*
+File Name: index.php
+Author: Ian Blanchette
+Student ID: 100139251
+Website Name: http://comp1006-100139251midterm.azurewebsites.net/index.php
+Description: The home page for the list of books to be viewed by the user allowing them to edit
+delete and view the table
+*/
 $query = "SELECT * FROM books"; // SQL statement
 $statement = $db->prepare($query); // encapsulate the sql statement
 $statement->execute(); // run on the db server
@@ -29,7 +36,7 @@ $statement->closeCursor(); // close the connection
             <!-- /////////////////////////// -->
             <!-- FIX THE ADD NEW BOOK BUTTON -->
             <!-- /////////////////////////// -->
-
+            <!-- Added the url for the user to add into a new book -->
             <a class="btn btn-primary" href="book_details.php?gameID=0">
                 <i class="fa fa-plus"></i> Add New Book</a>
             <br>
