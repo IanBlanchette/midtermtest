@@ -5,18 +5,18 @@ include_once('database.php'); // include the database connection file
 /* YOUR CODE GOES HERE */
 /*/////////////////////*/
 
-$bookId = $_GET["bookID"];; // this is just a placeholder
-if($bookId == 0) {
-    $getId = null;
+$bookID = $_GET["bookID"]; // assigns the gameID from the URL
+if($bookID == 0) {
+    $game = null;
     $isAddition = 1;
 } else {
     $isAddition = 0;
-$query = "SELECT * FROM books WHERE Id = :book_id "; #SQL statement
-$statement = $db->prepare($query); #prepare the sql statement
-$statement->bindValue(':book_id', $bookId);
-$statement->execute(); #run on the database server
-$getId = $statement->fetch(); #returns the query
-$statement->closeCursor(); #close the connection
+$query = "SELECT * FROM books WHERE Id = :book_id "; // SQL statement
+$statement = $db->prepare($query); // encapsulate the sql statement
+$statement->bindValue(':book_id', $bookID);
+$statement->execute(); // run on the db server
+$game = $statement->fetch(); // returns only one record
+$statement->closeCursor(); // close the connection
 }
 ?>
 <!DOCTYPE html>
