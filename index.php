@@ -55,7 +55,7 @@ $statement->closeCursor(); // close the connection
 
                             <td><a class="btn btn-primary" href="book_details.php?bookID=<?php echo $book['Id'] ?>"><i class="fa fa-pencil-square-o"></i> Edit</a></td>
 
-                            <td><a class="btn btn-danger" href="book_delete.php?bookID=<?php echo $book['Id'] ?>"><i class="fa fa-trash-o"></i> Delete</a></td> Delete</a></td>
+                            <td><a class="btn btn-danger" href="book_delete.php?bookID=<?php echo $book['Id'] ?>"><i class="fa fa-trash-o"></i> Delete</a></td>
                         </tr>
                     <?php endforeach; ?>
 
