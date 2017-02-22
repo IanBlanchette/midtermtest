@@ -4,7 +4,7 @@ include_once('database.php');
 /*//////////////////////*/
 /* YOUR CODE GOES HERE */
 /*/////////////////////*/
-$book = $_GET['Id'];
+$book = $_GET['BookID'];
 if($book != false)
 	$query = "DELETE FROM books WHERE id = :id";
 	$statement = $db->prepare($query);
