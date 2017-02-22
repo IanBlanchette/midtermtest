@@ -5,7 +5,7 @@ include_once('database.php'); // include the database connection file
 /* YOUR CODE GOES HERE */
 /*/////////////////////*/
 
-$book = $_GET['Id'];; // this is just a placeholder
+$book = $_GET["bookID"];; // this is just a placeholder
 if($book == 0) {
     $getId = null;
     $isAddition = 1;
@@ -17,6 +17,7 @@ $statement->bindValue(':id', $book);
 $statement->execute(); #run on the database server
 $getId = $statement->fetch(); #returns the query
 $statement->closeCursor(); #close the connection
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -77,4 +78,3 @@ $statement->closeCursor(); #close the connection
 <script src="./Scripts/app.js"></script>
 </body>
 </html>
-
