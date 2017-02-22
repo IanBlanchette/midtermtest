@@ -53,9 +53,9 @@ $statement->closeCursor(); // close the connection
                             <!-- MODIFY SECTION BELOW -->
                             <!-- //////////////////// -->
 
-                            <td><a class="btn btn-primary" href="book_details..php?bookID=<?php echo $book['Id'] ?>"><i class="fa fa-pencil-square-o"></i> Edit</a></td>
+                            <td><a class="btn btn-primary" href="book_details..php?bookID=<?php echo $book['ID'] ?>"><i class="fa fa-pencil-square-o"></i> Edit</a></td>
 
-                            <td><a class="btn btn-danger" href="book_details.php?bookID=<?php echo $book['Id'] ?>" onclick="return confirm('Delete?')"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</a></td>
+                            <td><a class="btn btn-danger" href="book_details.php?bookID=<?php echo $book['ID'] ?>" onclick="return confirm('Delete?')"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</a></td>
                         </tr>
                     <?php endforeach; ?>
 
