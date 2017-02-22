@@ -30,7 +30,7 @@ $statement->closeCursor(); // close the connection
             <!-- FIX THE ADD NEW BOOK BUTTON -->
             <!-- /////////////////////////// -->
 
-            <a class="btn btn-primary" href="">
+            <a class="btn btn-primary" href="book_details.php">
                 <i class="fa fa-plus"></i> Add New Book</a>
             <br>
             <table class="table table-striped table-hover table-bordered">
