@@ -4,7 +4,6 @@ include_once('database.php'); // include the database connection file
 /*//////////////////////*/
 /* YOUR CODE GOES HERE */
 /*/////////////////////*/
-
 $bookID = $_GET["bookID"]; // assigns the gameID from the URL
 if($bookID == 0) {
     $book = null;
