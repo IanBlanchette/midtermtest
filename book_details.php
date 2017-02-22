@@ -7,7 +7,7 @@ include_once('database.php'); // include the database connection file
 
 $bookID = $_GET["bookID"]; // assigns the gameID from the URL
 if($bookID == 0) {
-    $game = null;
+    $book = null;
     $isAddition = 1;
 } else {
     $isAddition = 0;
@@ -15,7 +15,7 @@ $query = "SELECT * FROM books WHERE Id = :book_id "; // SQL statement
 $statement = $db->prepare($query); // encapsulate the sql statement
 $statement->bindValue(':book_id', $bookID);
 $statement->execute(); // run on the db server
-$game = $statement->fetch(); // returns only one record
+$book = $statement->fetch(); // returns only one record
 $statement->closeCursor(); // close the connection
 }
 ?>
