@@ -11,9 +11,9 @@ if($bookId == 0) {
     $isAddition = 1;
 } else {
     $isAddition = 0;
-$query = "SELECT * FROM books WHERE id = :id "; #SQL statement
+$query = "SELECT * FROM books WHERE Id = :book_id "; #SQL statement
 $statement = $db->prepare($query); #prepare the sql statement
-$statement->bindValue(':id', $bookId);
+$statement->bindValue(':book_id', $bookId);
 $statement->execute(); #run on the database server
 $getId = $statement->fetch(); #returns the query
 $statement->closeCursor(); #close the connection
