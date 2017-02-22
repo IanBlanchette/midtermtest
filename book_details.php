@@ -4,7 +4,7 @@ include_once('database.php'); // include the database connection file
 /*//////////////////////*/
 /* YOUR CODE GOES HERE */
 /*/////////////////////*/
-$bookID = $_GET["bookID"]; // assigns the gameID from the URL
+$bookID = $_GET['bookID']; // assigns the gameID from the URL
 if($bookID == 0) {
     $book = null;
     $isAddition = 1;
@@ -23,7 +23,7 @@ $statement->closeCursor(); // close the connection
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Game Details</title>
+    <title>Book Details</title>
     <!-- CSS Section -->
     <link rel="stylesheet" href="./Scripts/lib/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="./Scripts/lib/bootstrap/dist/css/bootstrap-theme.min.css">

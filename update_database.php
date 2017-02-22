@@ -1,4 +1,12 @@
 <?php
+/*
+File Name: update_database.php
+Author: Ian Blanchette
+Student ID: 100139251
+Website Name: http://comp1006-100139251midterm.azurewebsites.net/index.php
+Description: Php script to update the sever with the new inputs 
+
+*/
 include_once('database.php');
 
 $isAddition = filter_input(INPUT_POST, "isAddition");
@@ -25,7 +33,7 @@ $bookID = filter_input(INPUT_POST, "IDTextField");
 /* FIX THIS MYSQL QUERY */
 /*//////////////////////*/
 
-$query = "UPDATE books SET Title = :book_title, Author = :book_author, Price = :book_price, Genre = :book_genre WHERE Id = :book_id ";
+$query = "UPDATE books SET Title = :book_title, Author = :book_author, Price = :book_price, Genre = :book_genre WHERE id = :book_id ";
 $statement = $db->prepare($query); // encapsulate the sql statement
 $statement->bindValue(':book_id', $bookID);
 
